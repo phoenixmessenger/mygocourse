@@ -7,6 +7,7 @@ import (
 
 func main() {
 	rand.Seed(time.Now().UnixNano())
+	
 	//Угадываем мы
 	var n int
 	var u int 
@@ -28,25 +29,24 @@ func main() {
 	//Угадывает компьютер
 	
 	var number int
-	var ch string
+	var ch byte
+
 	println("Введите число для угадывания!")
 	fmt.Scan(&number)
 	fmt.Println(number)
-
-	for number = 1; number < 100; {
-		var result int
-		result = 50
+	for number = 1; number < 100; number++ {
+		x := rand.Intn(100)
+		result := x
 		fmt.Println(result)
-		
 		for result = 1; result < 100; result++  {
-			fmt.Scan(&ch)
-			if ch == "<" {
-				result = 100 - number
+			fmt.Scanf("%c", &ch)
+			if ch == '<' {
+				result = result + 1
 				fmt.Println(result)
-			} else if ch == ">" {
-				result =  result + 1
+			} else if ch == '>' {
+				result = result - 1
 				fmt.Println(result)
-			} else if ch == "=" {
+			} else if ch == '=' {
 				result = number
 				fmt.Println("Угадал!")
 				break

@@ -1,16 +1,17 @@
-package main 
-import ( 
-	"time"
+package main
+
+import (
 	"fmt"
 	"math/rand"
+	"time"
 )
 
 func main() {
 	rand.Seed(time.Now().UnixNano())
-	
+
 	//Угадываем мы
 	var n int
-	var u int 
+	var u int
 	n = rand.Intn(100)
 	fmt.Println("Комп загадал число от 1 до 100, угадай!")
 
@@ -25,9 +26,9 @@ func main() {
 		}
 	}
 	fmt.Println("Угадал!")
-	
+
 	//Угадывает компьютер
-	
+
 	var number int
 	var ch byte
 
@@ -38,7 +39,7 @@ func main() {
 		x := rand.Intn(100)
 		result := x
 		fmt.Println(result)
-		for result = 1; result < 100; result++  {
+		for result = 1; result < 100; result++ {
 			fmt.Scanf("%c", &ch)
 			if ch == '<' {
 				result = result + 1
@@ -52,7 +53,7 @@ func main() {
 				break
 			}
 		}
-	break
+		break
 	}
 
-}		
+}
